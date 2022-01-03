@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - dev
+  workflow_dispatch:
 
 jobs:
   read_file:
@@ -14,8 +15,15 @@ jobs:
         with:
           path: main
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
       - name: pwd
         run: pwd
 
       - name: read file
         run: cat main/src/hello.js
+
+      - name: run hello.js
+        run: node src/hello.js

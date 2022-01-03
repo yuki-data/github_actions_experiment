@@ -28,3 +28,9 @@ jobs:
 
       - name: run hello.js
         run: node src/hello.js
+
+      - name: yarn install
+        run: yarn install
+
+      - name: jest test sample
+        run: yarn test

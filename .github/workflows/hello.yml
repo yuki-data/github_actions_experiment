@@ -1,0 +1,21 @@
+name: read file
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  read_file:
+    name: read the contents of the file
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: main
+
+      - name: pwd
+        run: pwd
+
+      - name: read file
+        run: cat main/src/hello.js
